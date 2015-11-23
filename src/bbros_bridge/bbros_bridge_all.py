@@ -124,6 +124,14 @@ def main():
 	ROS2BB_CommandsCalls('rs_moverobot', Default_ROS_BB_Bridge)
 	ROS2BB_CommandsCalls('spg_asay', Default_ROS_BB_Bridge)
 	ROS2BB_CommandsCalls('spg_say', Default_ROS_BB_Bridge)
+	#commands for PRS-FND Module
+	ROS2BB_CommandsCalls('pf_find', Default_ROS_BB_Bridge)
+	ROS2BB_CommandsCalls('pf_remember', Default_ROS_BB_Bridge)
+	ROS2BB_CommandsCalls('pf_auto', Default_ROS_BB_Bridge)
+	ROS2BB_CommandsCalls('pf_sleep', Default_ROS_BB_Bridge)
+	ROS2BB_CommandsCalls('pf_shutdown', Default_ROS_BB_Bridge)
+	ROS2BB_CommandsCalls('pf_amnesia', Default_ROS_BB_Bridge)
+	ROS2BB_CommandsCalls('pf_forget', Default_ROS_BB_Bridge)
 
 	#BRIDGE SHARED VARS AND TOPICS
 	#create a dictionary of bridges, for the BB shared vars and for the ROS topics

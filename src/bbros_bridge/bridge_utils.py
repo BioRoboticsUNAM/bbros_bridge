@@ -1,7 +1,7 @@
 import std_msgs.msg
 import bbros_bridge.msg
 import rosgraph_msgs.msg
-import beginnner_tutorials.msg
+#import beginnner_tutorials.msg
 from pyrobotics import BB
 from pyrobotics.shared_variables import SharedVarTypes
 
@@ -63,7 +63,7 @@ BB_RECOSPEECH = SharedVarTypes.RECOGNIZED_SPEECH
 ROS_STRING = std_msgs.msg.String
 ROS_RECOSPEECH = bbros_bridge.msg.RecognizedSpeech
 ROS_LOG = rosgraph_msgs.msg.Log
-ROS_NUM = beginnner_tutorials.msg.Num
+#ROS_NUM = beginnner_tutorials.msg.Num
 
 #dictionary to store the mapping bbVarType:rosVarType
 BB2ROS_TYPE_MAP = {
@@ -76,13 +76,13 @@ BB2ROS_TYPE_MAP = {
 ROS2BB_TYPE_MAP = {
 	ROS_STRING	:	[BB_STRING, ROS_STRING_TO_BB_STRING, ROS_STRING_DEFAULT], 
 	ROS_LOG	:	[BB_STRING, ROS_ANY_TO_BB_STRING, ROS_STRING_DEFAULT], 
-	ROS_NUM	:	[BB_STRING, ROS_ANY_TO_BB_STRING, ROS_STRING_DEFAULT], 
+	#ROS_NUM	:	[BB_STRING, ROS_ANY_TO_BB_STRING, ROS_STRING_DEFAULT], 
 	'default'	:	[BB_STRING, ROS_ANY_TO_BB_STRING, ROS_STRING_DEFAULT]
 }	
 #dictionary to ma the ROS msg type (string representation) to ROS msg valid types
 MSGTYPEALIAS_TO_MSGTYPESYSTEM = {
 	'std_msgs/String'		:	ROS_STRING, 
 	'rosgraph_msgs/Log'	:	ROS_LOG, 
-	'beginnner_tutorials/Num'	:	ROS_NUM, 
+	#'beginnner_tutorials/Num'	:	ROS_NUM, 
 	'default'	:	ROS_STRING
 }
