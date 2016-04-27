@@ -5,6 +5,13 @@ import rosgraph_msgs.msg
 from pyrobotics import BB
 from pyrobotics.shared_variables import SharedVarTypes
 
+hri_exists = True
+try:
+	import hri_msgs.msg
+except:
+	print "hri not located"
+	hri_exists = False
+
 #functions definition to convert shared variables to topic values
 def BB_STRING_TO_ROS_STRING(value):
 	"""
@@ -61,7 +68,10 @@ BB_STRING = SharedVarTypes.STRING
 BB_RECOSPEECH = SharedVarTypes.RECOGNIZED_SPEECH
 #constants for ROS var types
 ROS_STRING = std_msgs.msg.String
-ROS_RECOSPEECH = bbros_bridge.msg.RecognizedSpeech
+if hri_exists:
+	ROS_RECOSPEECH = hri_msgs.msg.RecognizedSpeech
+else:
+	ROS_RECOSPEECH = bbros_bridge.msg.RecognizedSpeech
 ROS_LOG = rosgraph_msgs.msg.Log
 #ROS_NUM = beginnner_tutorials.msg.Num
 

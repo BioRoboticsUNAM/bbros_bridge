@@ -1,5 +1,6 @@
 import bridge_utils
 import rospy
+import time
 from pyrobotics import BB
 from pyrobotics.messages import Command, Response
 from pyrobotics.shared_variables import SharedVarTypes
@@ -61,7 +62,7 @@ class ROS2BBPublisher:
 			rospy.logfatal('An unexpected error ocurred when trying to update the Shared Var "' + str(self.bbVarName) + '" from ROS. No value updated.')
 		if dicSuccess:
 			if BB.WriteSharedVar(self.bbVarType, self.bbVarName, bbSharedVarValue):
-				rospy.loginfo('BB Shared Var "' + str(self.bbVarName) + '" updated from ROS.')
+				rospy.loginfo('BB shared Var "' + str(self.bbVarName) + '" updated from ROS.')
 			else:
 				rospy.logwarn('BB Shared Var "' + str(self.bbVarName) + '" not updated from ROS.')
 
