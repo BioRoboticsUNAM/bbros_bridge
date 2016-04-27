@@ -137,8 +137,8 @@ def dictionaryAddition(dicOperator_1, dicOperator_2):
 
 def main():
 	bbConnectionPort = 2080;
-	topicsInclusionList = [];
-	svInclusionList = [];
+	topicsInclusionList = ["*"];
+	svInclusionList = ["*"];
 	srvInclusionList = [];
 	cmdInclusionList = [];
 
