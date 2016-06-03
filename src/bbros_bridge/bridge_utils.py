@@ -31,7 +31,7 @@ def BB_RECO_TO_ROS_RECO(value):
 		hypotesisList.append(recoTuple[0])
 		confidenceList.append(float(recoTuple[1]))
 
-	return bbros_bridge.msg.RecognizedSpeech(hypotesisList, confidenceList)
+	return hri_msgs.msg.RecognizedSpeech(hypotesisList, confidenceList)
 def BB_STRING_DEFAULT():
 	"""
 		Returns a BB String default value.
